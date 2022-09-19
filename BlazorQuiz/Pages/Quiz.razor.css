@@ -1,0 +1,31 @@
+﻿body {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Calibri;
+}
+
+.title{
+    margin: 30px auto;
+    padding: 10px;
+    font-size: 40pt;
+    width: 100%;
+    text-align: center;
+}
+
+.quiz {
+    margin: 10px auto;
+    width: 50%;
+    background-color: #f5f6f6;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: -20px 20px 20px rgba(0,0,0,0.3);
+}
+
+.quiz-body{
+    padding-top: 15px;
+}
+
+.question{
+    text-align: center;
+}
