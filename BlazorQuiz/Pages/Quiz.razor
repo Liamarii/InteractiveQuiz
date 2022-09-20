@@ -1,23 +1,29 @@
 ﻿@page "/quiz"
 @inherits QuizBase
+@using BlazorQuiz.Components;
 
 <PageTitle>Quiz</PageTitle>
 
 <div class=container>
     <div class=quiz>
-        <div class="title">
-            Quiz Title
-        </div>
-        <div class="question">
-            <h2>@Questions[0].Content</h2>
-        </div>
-        <div class="answers">
-            <ul>
-            @foreach (var answer in Questions[0].Answers)
-            {
-                <li>@answer</li>
-            }
-            </ul>
-        </div>
+        @if (QuestionIndex < Questions.Count())
+        {
+             <div class="title">
+                Quiz Title
+            </div>
+            <div class="question">
+                <h2>@Questions[QuestionIndex].Content</h2>
+            </div>
+            <div class="answers">
+                @foreach (var answer in Questions[QuestionIndex].Answers)
+                {
+                    <Answers Answer="@answer" OnSelected="OptionSelected"></Answers>
+                }
+            </div>
+        }
+        else
+        {
+            <div>Your score was @Score of @Questions.Count()</div>
+        }
     </div>
 </div>
