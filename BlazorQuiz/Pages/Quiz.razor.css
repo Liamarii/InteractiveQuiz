@@ -29,3 +29,7 @@
 .question{
     text-align: center;
 }
+
+.answer{
+    margin:1em;
+}
