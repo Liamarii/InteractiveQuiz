@@ -15,6 +15,12 @@ namespace BlazorQuiz.Pages
             return base.OnInitializedAsync();
         }
 
+        public void Replay()
+        {
+            Score = 0;
+            QuestionIndex = 0;
+        }
+
         public void OptionSelected(string option)
         {
             if(option == Questions[QuestionIndex].CorrectAnswer)
