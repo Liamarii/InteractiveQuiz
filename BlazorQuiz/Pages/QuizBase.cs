@@ -40,9 +40,9 @@ namespace BlazorQuiz.Pages
             };
             Question q2 = new()
             {
-                Content = "I push my fingers..",
-                Answers = new List<string>() { "Into a grapefruit", "Into my eyes", "Into my pocket" },
-                CorrectAnswer = "Into my eyes"
+                Content = "How many sides does a dodecahedron have",
+                Answers = new List<string>() { "7", "9", "12", "16" },
+                CorrectAnswer = "12"
             };
             Question q3 = new()
             {
