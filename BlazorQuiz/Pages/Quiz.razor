@@ -3,15 +3,12 @@
 @using BlazorQuiz.Components;
 
 <PageTitle>Quiz</PageTitle>
-
 <div class=container>
     <div class=quiz>
         @if (QuestionIndex < Questions.Count())
         {
             <div class="title">
-                Quiz Title
-            </div>
-            <div class="question">
+                🎃 Halloween quiz
                 <h2>@Questions[QuestionIndex].Content</h2>
             </div>
             <div class="answers">
@@ -23,10 +20,18 @@
         }
         else
         {
-            <div>Your score was @Score of @Questions.Count()</div>
-            @(@Score == @Questions.Count ? "Perfect score" : "Better luck next time!");
-            <br />
-            <button onclick="@Replay">Play again?</button>
+            <div class="title">
+                🎃 Halloween quiz
+            </div>
+            <div class="result">
+                Your score was @Score of @Questions.Count().
+                <br/>
+                 🎃
+                 <br/>
+                @(@Score == @Questions.Count ? "Perfect score!" : "Better luck next time!")
+                <br/>
+                <button onclick="@Replay">Play again?</button>
+            </div>
         }
     </div>
 </div>
