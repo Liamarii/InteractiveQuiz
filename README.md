@@ -1,8 +1,7 @@
 # Quiz
 
 ## Summary
-This is an interactive quiz made with Blazor WebAssembly.
-I created this as a way to teach myself Blazor in something with a very limited scope.
+An interactive quiz made with Blazor WebAssembly.
 
 ## Detail
 This is a very basic quiz made up of four questions themed around halloween.
