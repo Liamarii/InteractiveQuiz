@@ -34,27 +34,27 @@ namespace BlazorQuiz.Pages
         {
             Question q1 = new()
             {
-                Content = "They don't think it be like it be..",
-                Answers = new List<string>() { "For you", "So I do", "But it do" },
-                CorrectAnswer = "But it do"
+                Content = "Who plotted to blow up the House of Lords?",
+                Answers = new List<string>() { "Guy Fieri", "Guy Fawkes", "Mr Walnut" },
+                CorrectAnswer = "Guy Fawkes"
             };
             Question q2 = new()
             {
-                Content = "How many sides does a dodecahedron have",
-                Answers = new List<string>() { "7", "9", "12", "16" },
-                CorrectAnswer = "12"
+                Content = "What was candy corn originally called?",
+                Answers = new List<string>() { "Chicken Feed", "Dog Eggs", "Goat Seed", "Mr Walnut" },
+                CorrectAnswer = "Chicken Feed"
             };
             Question q3 = new()
             {
-                Content = "Where is the elephants foot?",
-                Answers = new List<string>() { "On the elephants leg", "Ukraine", "Africa" },
-                CorrectAnswer = "Ukraine"
+                Content = "What was the most jack o'lanterns on display at once?",
+                Answers = new List<string>() { "30,581", "4", "8 billion" },
+                CorrectAnswer = "80,581"
             };
             Question q4 = new()
             {
-                Content = "What is 10 plus 10",
-                Answers = new List<string>() { "20", "1010", "Can't be done" },
-                CorrectAnswer = "20"
+                Content = "When is Halloween?",
+                Answers = new List<string>() { "Easter", "Every year", "Boctober" },
+                CorrectAnswer = "Every year"
             };
             Questions.AddRange(new List<Question>{ q1, q2, q3, q4 });
         }
