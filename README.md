@@ -1,4 +1,4 @@
-# Quiz
+# InteractiveQuiz
 
 ## Summary
 An interactive quiz made with Blazor WebAssembly.
