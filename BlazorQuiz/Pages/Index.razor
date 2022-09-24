@@ -1,9 +1,33 @@
 ﻿@page "/"
+@inherits IndexBase
+@using BlazorQuiz.Components;
 
-<PageTitle>Index</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<PageTitle>Quiz</PageTitle>
+<div class=container>
+    <div class=quiz>
+        @if (QuestionIndex < Questions.Count())
+        {
+            <div class="title">
+                @Title
+                <h2>@Questions[QuestionIndex].Content</h2>
+            </div>
+            <div class="answers">
+                @foreach (var answer in Questions[QuestionIndex].Answers)
+                {
+                    <Answers Answer="@answer" OnSelected="SelectOption"></Answers>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="title">
+                @Title
+            </div>
+            <div class="result">
+                @ResultResponse()
+                <br/>
+                <button @onclick="@Restart">Play again?</button>
+            </div>
+        }
+    </div>
+</div>
