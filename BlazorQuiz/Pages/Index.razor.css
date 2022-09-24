@@ -1,11 +1,11 @@
 ﻿body {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Calibri;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri;
 }
 
-.title{
+.title {
     margin: 30px auto;
     padding: 10px;
     font-size: 40pt;
@@ -23,11 +23,11 @@
     background-color: #f5f6f6;
 }
 
-.answers{
+.answers {
     padding-top: 15px;
 }
 
-.question{
+.question {
     text-align: center;
 }
 
@@ -35,6 +35,6 @@
     margin: 1em;
 }
 
-.result{
-    text-align:center;
+.result {
+    text-align: center;
 }
