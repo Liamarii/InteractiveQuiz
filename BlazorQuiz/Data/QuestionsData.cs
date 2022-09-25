@@ -2,19 +2,17 @@
 
 namespace BlazorQuiz.Data
 {
-    public class QuestionsData
+    public static class QuestionsData
     {
         public static Tuple<string, List<Question>> GetQuestionSet(QuestionSet questionSet)
         {
             return questionSet switch
             {
-                _ => HalloweenQuestionSet()
+                QuestionSet.Halloween => HalloweenQuestionSet(),
+                QuestionSet.Christmas => ChristmasQuestionSet(),
+                QuestionSet.Miscellaneous => MiscellaneousQuestionSet(),
+                _ => throw new NotImplementedException()
             };
-        }
-
-        public enum QuestionSet
-        {
-            Halloween
         }
 
         private static Tuple<string, List<Question>> HalloweenQuestionSet()
@@ -37,7 +35,7 @@ namespace BlazorQuiz.Data
                 {
                     Content = "What was the most jack o'lanterns on display at once?",
                     Answers = new List<string>() { "30,581", "4", "8 billion" },
-                    CorrectAnswer = "80,581"
+                    CorrectAnswer = "30,581"
                 },
                 new()
                 {
@@ -47,5 +45,44 @@ namespace BlazorQuiz.Data
                 }
             });
         }
+
+        private static Tuple<string, List<Question>> ChristmasQuestionSet()
+        {
+            return Tuple.Create("🎅 Christmas quiz", new List<Question>()
+            {
+                new()
+                {
+                    Content = "Which is not a reindeer name?",
+                    Answers = new List<string>() { "Prancer", "Vixen", "Donner","Comet","Ross Kemp" },
+                    CorrectAnswer = "Ross Kemp"
+                }
+            });
+        }
+
+        private static Tuple<string, List<Question>> MiscellaneousQuestionSet()
+        {
+            return Tuple.Create("‍🥨 Miscellaneous quiz", new List<Question>()
+            {
+                new()
+                {
+                    Content = "Where is the elephant foot?",
+                    Answers = new List<string>() { "Africa", "On the elephant", "Ukraine" },
+                    CorrectAnswer = "Ukraine"
+                },
+                new()
+                {
+                    Content = "Where do the most rainbows occur?",
+                    Answers = new List<string>() { "Hawaii", "Florida", "Norway" },
+                    CorrectAnswer = "Hawaii"
+                }
+            });
+        }
     };
+
+    public enum QuestionSet
+    {
+        Halloween,
+        Christmas,
+        Miscellaneous
+    }
 }

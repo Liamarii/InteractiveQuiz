@@ -1,0 +1,40 @@
+﻿@font-face {
+    font-family: 'Almarai';
+    src: url('../fonts/Almarai-Regular.ttf');
+}
+
+.title {
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+    font-family: 'Almarai';
+    padding-bottom: 5%;
+}
+
+.quiz {
+    margin: 10px auto;
+    width: 50%;
+    border-radius: 10px;
+    padding: 2%;
+    box-shadow: -20px 20px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    background-color: #f5f6f6;
+}
+
+.question {
+    text-align: center;
+}
+
+.answer {
+    margin: 1em;
+}
+
+.result {
+    text-align: center;
+}
+
+.result-text {
+    text-align: center;
+    padding: 5%;
+}
+
