@@ -1,0 +1,45 @@
+﻿@inherits QuizBase
+@using BlazorQuiz.Components;
+@using BlazorQuiz.Pages;
+@using Data;
+
+<PageTitle>Quiz</PageTitle>
+<div class=container>
+    <div class=quiz>      
+        @if (QuestionIndex < Questions.Count() && Questions.Count > 0)
+        {
+            <div class="title">
+                @Title
+            </div>
+            <div class="question">
+                @Questions[QuestionIndex].Content
+            </div>
+                @foreach (var answer in Questions[QuestionIndex].Answers)
+                {
+                    <Answers Answer="@answer" OnSelected="SelectOption"></Answers>
+                }
+        }
+        @if (QuestionIndex >= Questions.Count() && Questions.Count > 0)
+        {
+            <div class="title">
+                @Title
+            </div>
+            <div class="result">
+                <img src="https://media.giphy.com/media/121YQW1OQhqGLS/giphy.gif">
+            <div class="result-text">
+                @ResultResponse()
+            </div>
+                <button @onclick="@Restart">Play again?</button>
+            </div>
+        }
+        @if(Questions.Count == 0)
+        {
+            <div class="title">
+                Select a theme
+            </div>
+            <Answers Answer="Halloween" OnSelected="@SetHalloweenQuestionSet"></Answers>
+            <Answers Answer="Christmas" OnSelected="@SetChristmasQuestionSet"></Answers>
+            <Answers Answer="Miscellaneous" OnSelected="@SetMiscellaneosQuestionSet"></Answers>
+        }
+    </div>
+</div>
