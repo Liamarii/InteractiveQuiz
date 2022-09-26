@@ -37,9 +37,9 @@
             <div class="title">
                 Select a theme
             </div>
-            <Answers Answer="Halloween" OnSelected="@SetHalloweenQuestionSet"></Answers>
-            <Answers Answer="Christmas" OnSelected="@SetChristmasQuestionSet"></Answers>
-            <Answers Answer="Miscellaneous" OnSelected="@SetMiscellaneosQuestionSet"></Answers>
+            <Answers Answer="Halloween" OnSelected="@(() => SetQuestionSet(QuestionSet.Halloween))"></Answers>
+            <Answers Answer="Christmas" OnSelected="@(() => SetQuestionSet(QuestionSet.Christmas))"></Answers>
+            <Answers Answer="Miscellaneous" OnSelected="@(() => SetQuestionSet(QuestionSet.Miscellaneous))"></Answers>
         }
     </div>
 </div>

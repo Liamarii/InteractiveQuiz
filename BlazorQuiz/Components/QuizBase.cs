@@ -3,7 +3,7 @@ using BlazorQuiz.Models;
 using Microsoft.AspNetCore.Components;
 using static BlazorQuiz.Data.QuestionsData;
 
-namespace BlazorQuiz.Pages
+namespace BlazorQuiz.Components
 {
     public class QuizBase : ComponentBase
     {
@@ -15,22 +15,15 @@ namespace BlazorQuiz.Pages
 
         private int _score = 0;
 
-        public void SetHalloweenQuestionSet(string questionSet)
+        public void SetQuestionSet(QuestionSet questionSet)
         {
-            Tuple<string, List<Question>>? questions = GetQuestionSet(questionSet: QuestionSet.Halloween);
-            Title = questions.Item1;
-            Questions = questions.Item2;
-        }
-
-        public void SetChristmasQuestionSet(string questionSet)
-        {
-            Tuple<string, List<Question>>? questions = GetQuestionSet(questionSet: QuestionSet.Christmas);
-            Title = questions.Item1;
-            Questions = questions.Item2;
-        }
-        public void SetMiscellaneosQuestionSet(string questionSet)
-        {
-            Tuple<string, List<Question>>? questions = GetQuestionSet(questionSet: QuestionSet.Miscellaneous);
+            Tuple<string, List<Question>>? questions = questionSet switch
+            {
+                QuestionSet.Halloween => GetQuestionSet(questionSet: QuestionSet.Halloween),
+                QuestionSet.Christmas => GetQuestionSet(questionSet: QuestionSet.Christmas),
+                QuestionSet.Miscellaneous => GetQuestionSet(questionSet: QuestionSet.Miscellaneous),
+                _ => throw new NotImplementedException(),
+            };
             Title = questions.Item1;
             Questions = questions.Item2;
         }
@@ -52,7 +45,7 @@ namespace BlazorQuiz.Pages
             {
                 return $"You got {_score} of {Questions.Count} right";
             }
-            return $"Your small brain only scored {_score}";
+            return $"Your small brain scored {_score}";
         }
 
         public void SelectOption(string option)
